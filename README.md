@@ -9,7 +9,7 @@ Instead of loading all technical documentation into every Claude session (burnin
 ## Setup
 
 1. Copy the `.claude` directory structure to your home directory
-2. Make the hook executable: `chmod +x ~/.claude/hooks/session-start-memory-check.sh`
+2. Make the hook executable: `chmod +x ~/.claude/hooks/session-start-memory-check.zsh`
 3. Add your own memory files to `~/.claude/memories/`
 
 ## How It Works
@@ -23,7 +23,7 @@ When you first interact with Claude in a new session:
 
 - tmux (version 3.2+)
 - fzf
-- bash
+- zsh
 
 ## Directory Structure
 
@@ -32,7 +32,7 @@ When you first interact with Claude in a new session:
 ├── CLAUDE.md          # Project context (loaded automatically)
 ├── settings.json      # Hook configuration
 ├── hooks/
-│   └── session-start-memory-check.sh
+│   └── session-start-memory-check.zsh
 └── memories/         # Your technical knowledge base
     ├── bash-best-practices.md
     ├── debugging-process.md
