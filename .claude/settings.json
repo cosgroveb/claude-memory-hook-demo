@@ -9,17 +9,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "^(Edit|MultiEdit|Write)$",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/remove-trailing-whitespace.sh"
-          }
-        ]
-      }
     ]
   }
 }

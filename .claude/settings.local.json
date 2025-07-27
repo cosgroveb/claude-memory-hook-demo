@@ -1,7 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh repo create:*)",
       "Bash(atuin kv get:*)",
       "Bash(ls:*)",
       "Bash(chmod:*)",
