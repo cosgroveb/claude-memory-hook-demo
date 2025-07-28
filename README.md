@@ -30,6 +30,10 @@ When you first interact with Claude in a new session:
 2. Use TAB to select relevant ones, ENTER to confirm
 3. Claude receives only the selected context
 
+<img width="646" height="398" alt="image" src="https://github.com/user-attachments/assets/a487d79f-307f-4fd4-9d00-a14dc75f5b20" />
+<img width="647" height="399" alt="image" src="https://github.com/user-attachments/assets/4e59d3a5-c0bd-4c3d-aa88-9d4030daec16" />
+<img width="646" height="401" alt="image" src="https://github.com/user-attachments/assets/a9f32c4d-e36c-42e5-bb67-9de09a486430" />
+
 ## Requirements
 
 - tmux (version 3.2+)
