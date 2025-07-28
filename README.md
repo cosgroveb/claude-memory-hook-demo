@@ -2,15 +2,23 @@
 
 A minimal example of selective memory loading for Claude Code using hooks.
 
-Instead of loading all technical documentation into every Claude session (burning
-thousands of tokens), this hook lets you select only the relevant memories when
-you start working. Hopefully your claude session is more productive.
+Instead of loading all memory you might need for any and all tasks into every
+Claude session (burning thousands of tokens), this hook lets you select only the
+relevant memories when you start working. Hopefully your claude session is more
+productive.
 
 ## Setup
 
-1. Copy the `.claude` directory structure to your home directory
-2. Make the hook executable: `chmod +x ~/.claude/hooks/session-start-memory-check.zsh`
-3. Add your own memory files to `~/.claude/memories/`
+```bash
+make install
+```
+
+This will:
+- Create `~/.claude/hooks/` and `~/.claude/memories/` directories
+- Copy the hook scripts and make them executable
+- Copy the settings.json configuration
+
+Then add your own memory files to `~/.claude/memories/`
 
 **NB**: It is critical to know these are intentionally examples and
 `~/.claude/memories` should be fully replaced by your docs, your team's or org's docs.
@@ -40,7 +48,8 @@ minimal. Imagine, though, a team with varied enough responsibilities to have
 ├── CLAUDE.md          # Project context (loaded automatically)
 ├── settings.json      # Hook configuration
 ├── hooks/
-│   └── session-start-memory-check.zsh
+│   ├── session-start-memory-check.zsh
+│   └── _memory-selector.zsh
 └── memories/         # Your technical knowledge base
     ├── bash-best-practices.md
     ├── debugging-process.md
