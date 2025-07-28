@@ -20,7 +20,7 @@ SESSION_MARKER="/tmp/claude-memory-selected-${TMUX_SESSION//[^a-zA-Z0-9]/-}"
 [[ -f "$SESSION_MARKER" ]] && exit 0
 
 # Check if helper script exists
-MEMORY_SELECTOR="$HOOKS_DIR/memory-selector.zsh"
+MEMORY_SELECTOR="$HOOKS_DIR/_memory-selector.zsh"
 if [[ ! -x "$MEMORY_SELECTOR" ]]; then
     echo "Memory selector script not found or not executable: $MEMORY_SELECTOR" >&2
     exit 1

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # Memory selection helper script
-# This script is called by session-start-memory-check.zsh
+# This is called by session-start-memory-check.zsh
 
 MEMORIES_DIR="${1:-${HOME}/.claude/memories}"
 TARGET_PANE="$2"
@@ -31,9 +31,7 @@ if [[ -n "$selected_display" ]]; then
             file="$MEMORIES_DIR/${display_path#memories/}"
             if [[ -f "$file" ]]; then
                 echo "## ${${file:t:r}//-/ }"
-                echo
                 cat "$file"
-                echo
             fi
         done <<< "$selected_display"
     } | tmux load-buffer - && \
