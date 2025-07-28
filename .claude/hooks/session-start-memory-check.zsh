@@ -12,11 +12,16 @@ HOOKS_DIR="${HOME}/.claude/hooks"
 command -v tmux >/dev/null 2>&1 || exit 0
 command -v fzf >/dev/null 2>&1 || exit 0
 
-# Use tmux session and window as stable identifier
-TMUX_SESSION="$(tmux display-message -p '#S:#I')"
+# Find Claude PID
+PID=$$
+while [[ $(ps -p "$PID" -o ppid= 2>/dev/null) -gt 1 ]]; do
+    PID=$(ps -p "$PID" -o ppid= | tr -d ' ')
+    [[ $(ps -p "$PID" -o comm=) == "claude" ]] && break
+done
+
 # Use TMPDIR if available (macOS), otherwise /tmp (Linux)
 MARKER_DIR="${TMPDIR:-/tmp}"
-SESSION_MARKER="${MARKER_DIR}/claude-memory-selected-${TMUX_SESSION//[^a-zA-Z0-9]/-}"
+SESSION_MARKER="${MARKER_DIR}/claude-memory-selected-${PID}"
 
 # Skip if already run for this tmux session/window
 [[ -f "$SESSION_MARKER" ]] && exit 0
